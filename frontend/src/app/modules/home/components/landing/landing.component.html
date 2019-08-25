@@ -1,0 +1,12 @@
+<div *ngIf='visibility   == false'>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div fxFlex='100%'>
+      <mat-card>
+        <mat-card-title>SmartClass</mat-card-title>
+        <mat-card-subtitle>Please login to continue</mat-card-subtitle>
+        <!-- <button (click)='flipSearchBarVisibility()' mat-raised-button color='primary'>Search</button> -->
+        <a routerLink='user'><button [disabled]='userLoggedIn' mat-raised-button color='primary'>Login</button></a>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<mat-toolbar>LECTURE REVIEW</mat-toolbar>
+<mat-card *ngFor="let topic of topics" style="margin:1rem 1rem">
+  <mat-card-title>{{topic.name}}</mat-card-title>
+  <mat-card-actions>
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="topic.feedback">
+      <mat-radio-button value="true">Understood</mat-radio-button>
+      <mat-radio-button style="margin-left:1rem" value="false">Repeat</mat-radio-button>
+    </mat-radio-group>
+  </mat-card-actions>
+</mat-card>
+<br>
+<br>
+
+<button style="margin-left:1rem; width:93%" mat-raised-button color="primary" (click)="submit()">Submit</button>

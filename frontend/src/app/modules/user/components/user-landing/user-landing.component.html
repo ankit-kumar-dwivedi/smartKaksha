@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<div *ngIf='bit==0'>
+  <mat-card>
+    <mat-card-title>User login in.</mat-card-title>
+
+    <mat-card-subtitle>Do not have an account? User registration is a breeze!!</mat-card-subtitle>
+
+    <button mat-raised-button color='primary' (click)='setBit(1)'>Login</button>
+    <button mat-raised-button color='primary' (click)='setBit(2)'>Register</button>
+    <a routerLink="/"><button mat-raised-button color='primary'>Back</button></a>
+  </mat-card>
+</div>
+
+<div *ngIf='bit==1'>
+  <mat-card>
+    <mat-error [hidden]='!messageVisibility'>{{ messages }}</mat-error>
+
+    <mat-form-field appearance='legacy'>
+      <input autocomplete='off' autofocus matInput placeholder='Username' [(ngModel)]='username' />
+    </mat-form-field>
+
+    <mat-form-field appearance='legacy'>
+      <input autocomplete='off' matInput placeholder='Password' type='password' [(ngModel)]='password' />
+    </mat-form-field>
+
+    <mat-form-field appearance='legacy'>
+      <mat-select placeholder='Role' [(value)]='role'>
+        <mat-option value="student">Student</mat-option>
+        <mat-option value="teacher">Teacher</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color='primary' (click)='login()'>Login</button>
+    <button mat-raised-button color='primary' (click)='setBit(0)'>Back</button>
+  </mat-card>
+</div>
+
+<div *ngIf='bit==2'>
+  <mat-card>
+    <mat-error [hidden]='!messageVisibility'>{{ messages }}</mat-error>
+
+    <mat-form-field appearance='legacy'>
+      <mat-select placeholder='Role' [(value)]='selector'>
+        <mat-option value="student">Student</mat-option>
+        <mat-option value="teacher">Teacher</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance='legacy'>
+      <input autocomplete='off' autofocus matInput placeholder="{{selector=='student'?'Enrollment Number':'Subject'}}"
+        [(ngModel)]='role' />
+    </mat-form-field>
+
+    <mat-form-field appearance='legacy'>
+      <input autocomplete='off' autofocus matInput placeholder='Name' [(ngModel)]='name' />
+    </mat-form-field>
+
+    <mat-form-field appearance='legacy'>
+      <input autocomplete='off' matInput placeholder='Username' [(ngModel)]='username' />
+    </mat-form-field>
+
+    <mat-form-field appearance='legacy'>
+      <input autocomplete='off' matInput placeholder='Password' type='password' [(ngModel)]='password' />
+    </mat-form-field>
+
+    <button mat-raised-button color='primary' (click)='register()'>Register</button>
+    <button mat-raised-button color='primary' (click)='setBit(0)'>Back</button>
+  </mat-card>
+</div>

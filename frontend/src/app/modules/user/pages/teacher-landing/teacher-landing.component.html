@@ -1,0 +1,12 @@
+<mat-toolbar>ATTENDANCE</mat-toolbar>
+<mat-card *ngFor="let student of students" class="flex-row" style="margin:2rem 1rem">
+  <mat-card-title>{{student.name}}</mat-card-title>
+  <mat-card-subtitle>{{student.enroll}}</mat-card-subtitle>
+  <mat-card-actions class="card-actions">
+    <mat-checkbox (change)="toggle($event, student)">
+      Present</mat-checkbox>
+  </mat-card-actions>
+</mat-card>
+
+<button style="margin-left:1rem; width:93%" mat-raised-button color='primary'
+  (click)='submitAttendance()'>Submit</button>

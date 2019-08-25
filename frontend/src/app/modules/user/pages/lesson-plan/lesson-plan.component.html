@@ -1,0 +1,17 @@
+<mat-toolbar>LESSON PLAN</mat-toolbar>
+<mat-card *ngFor="let topic of topics" style="margin:1rem 1rem">
+  <mat-card-title>{{topic}}</mat-card-title>
+  <button mat-icon-button color="primary" (click)="removeTopic(topic)">
+    <mat-icon>REMOVE</mat-icon>
+  </button>
+</mat-card>
+
+<div class="flex-row" style="margin:2rem 1rem">
+  <mat-form-field appearance="outline">
+    <input matInput type="text" [(ngModel)]="currentTopic" />
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary" (click)="addTopic()">Add</button>
+    <button style="margin-left:1rem" mat-raised-button color="primary" (click)="publish()">Publish Lesson Plan</button>
+  </div>
+</div>

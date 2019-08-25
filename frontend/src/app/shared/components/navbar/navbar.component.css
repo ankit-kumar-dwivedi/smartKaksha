@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Merriweather|Pacifico');
+button{
+    margin-left: 2%;
+    font-family: 'Pacifico', cursive;
+    float: right;
+}

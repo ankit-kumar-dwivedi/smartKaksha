@@ -1,0 +1,8 @@
+<mat-toolbar>STATISTICS</mat-toolbar>
+<button style="margin:1rem; width:93%" mat-raised-button color="primary" (click)="refresh()">Refresh</button>
+<mat-card *ngFor="let topic of topics" style="margin:2rem 1rem;"
+  [style.backgroundColor]="(topic.score>50)?'greenyellow':'red'">
+  <mat-card-title>{{topic.score}} %</mat-card-title>
+  <mat-card-subtitle>{{topic.name}}</mat-card-subtitle>
+</mat-card>
+<!-- <button mat-raised-button (click)="publish()">Publish Lesson Plan</button> -->

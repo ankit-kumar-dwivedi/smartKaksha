@@ -1,0 +1,7 @@
+.flex-row{
+    justify-content: space-between;
+  }
+
+.card-actions{
+    margin-left: 1rem;
+}

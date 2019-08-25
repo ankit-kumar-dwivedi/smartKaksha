@@ -1,0 +1,8 @@
+<mat-toolbar color='primary'>
+  <a routerLink='/'><span><button mat-flat-button color='accent'>SmartClass</button></span></a>
+  <button mat-raised-button color='primary' *ngIf='login' mat-button
+    [matMenuTriggerFor]="menu">{{ name | titlecase }}</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)='logout()'>Logout</button>
+  </mat-menu>
+</mat-toolbar>
